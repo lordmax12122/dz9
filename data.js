@@ -12,16 +12,21 @@ event.preventDefault();
     const userNumber = document.querySelector("#number").value;
     const userName = document.querySelector("#name").value;
 
-    const userForm = {
+    const getForm = {
         name: userName,
         number: userNumber,
         gmail: userGmail,
     };
+    
+       
 
-    addUserToLocalStorage(userForm, "userData");
+    addUserToLocalStorage(getForm, "userData");
+     userForm.reset()
+    
 });
 
 userDelete.addEventListener("click", (event) => {
     event.preventDefault();
     localStorage.clear();
+        userForm.reset()
 });
